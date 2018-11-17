@@ -1,7 +1,6 @@
-Feature: Login into account
-	Existing stackoverflow user should be able to login into account using correct credentials
+Feature: Login into account. Existing stackoverflow user should be able to login into account using correct credentials
 	
-Scenario: Login into account with correct details
+Scenario: Login into account with correct credentials
 	Given User navigates to stackoverflow website
 	And User clicks on the login button on homepage
 	And User enters a valid username
