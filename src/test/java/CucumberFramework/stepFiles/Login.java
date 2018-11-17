@@ -14,8 +14,7 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 
 public class Login {
-	WebDriver driver;
-	
+	private WebDriver driver;
 
 	@Before
 	public void setup() {
@@ -28,14 +27,14 @@ public class Login {
 
 	
 	@After
-	public void tearDown() throws InterruptedException {
+	public void tearDown() {
 		this.driver.manage().deleteAllCookies();
 		this.driver.quit();
 		this.driver = null;
 	}
 	
 	@Given("^User navigates to stackoverflow website$")
-	public void user_navigates_to_stackoverflow_website() throws Throwable {
+	public void user_navigates_to_stackoverflow_website() {
 		driver.get("https://stackoverflow.com/");
 	}
 
@@ -52,12 +51,12 @@ public class Login {
 	}
 
 	@And("^User enters a valid password$")
-	public void user_enters_a_valid_password() throws Throwable {
+	public void user_enters_a_valid_password()  {
 		driver.findElement(By.xpath(".//*[@id='password']")).sendKeys("Password321!");
 	}
 
 	@When("^User clicks on the login button$")
-	public void user_clicks_on_the_login_button() throws Throwable {
+	public void user_clicks_on_the_login_button() {
 		driver.findElement(By.xpath(".//*[@id='submit-button']")).click();
 	}
 
