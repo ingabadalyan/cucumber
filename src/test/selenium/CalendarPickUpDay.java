@@ -17,8 +17,11 @@ public class CalendarPickUpDay {
         driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
 
         driver.get("http://path2usa.com/travel-companions");
-        // Pick up July 15 from the calendar
+
         driver.findElement(By.xpath(".//*[@id='travel_date']")).click();
+        driver.findElement(By.className("class=[datepicker-days][class='datepicker-switch']"));
+
+        // Pick up July 15 from the calendar
 
         List<WebElement> listOfDays = driver.findElements(By.cssSelector(".day"));
         for (WebElement listOfDay : listOfDays) {
